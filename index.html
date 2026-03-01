@@ -1,289 +1,250 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Johnson Family Estate | Welcome Home</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        'sans': ['Inter', 'sans-serif'],
-                        'serif': ['Playfair Display', 'serif'],
-                    },
-                    colors: {
-                        'brand-blue': '#0A2342',
-                        'brand-gold': '#C1A57B',
-                        'brand-cream': '#F3EFEA',
-                        'brand-gray': '#4A4A4A',
-                    }
-                }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Johnson Family Estate Overview | Boutique Stay Experience</title>
+  <meta name="description" content="Welcome to Johnson Family Estate. Explore a boutique private stay with curated comforts, flexible gathering spaces, and warm host support.">
+  <link rel="canonical" href="https://johnson-family-resort.jaxsnjohnson.com/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Johnson Family Estate Overview | Boutique Stay Experience">
+  <meta property="og:description" content="Discover refined comfort, signature gathering spaces, and a seamless private-stay experience.">
+  <meta property="og:url" content="https://johnson-family-resort.jaxsnjohnson.com/">
+  <meta property="og:image" content="https://johnson-family-resort.jaxsnjohnson.com/images/c86f5b28-3bcc-4a55-874f-7c1ff7d825c9-drone.JPG">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Johnson Family Estate Overview | Boutique Stay Experience">
+  <meta name="twitter:description" content="Discover refined comfort, signature gathering spaces, and a seamless private-stay experience.">
+  <meta name="twitter:image" content="https://johnson-family-resort.jaxsnjohnson.com/images/c86f5b28-3bcc-4a55-874f-7c1ff7d825c9-drone.JPG">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['Cormorant Garamond', 'serif'],
+            sans: ['Source Sans 3', 'sans-serif']
+          },
+          colors: {
+            estate: {
+              ink: '#1A2B2A',
+              pine: '#203B38',
+              brass: '#B08A53',
+              ivory: '#F5F1E8',
+              linen: '#E7DED1',
+              slate: '#3A4B49'
             }
+          },
+          boxShadow: {
+            soft: '0 12px 40px rgba(26, 43, 42, 0.14)'
+          }
         }
-    </script>
-    <style>
-        /* Small style adjustments for a more polished look */
-        .hero-text-shadow {
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-        }
-        .section-title {
-            position: relative;
-            padding-bottom: 0.5rem;
-            margin-bottom: 1.5rem;
-        }
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 2px;
-            background-color: #C1A57B;
-        }
-        .gallery-item:hover .gallery-overlay {
-            opacity: 1;
-        }
-        .gallery-overlay {
-            transition: opacity 0.3s ease-in-out;
-        }
-        html {
-            scroll-behavior: smooth;
-        }
-    </style>
+      }
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body {
+      background: radial-gradient(circle at 80% -20%, rgba(176, 138, 83, 0.28), transparent 40%),
+                  linear-gradient(180deg, #f7f4ee 0%, #f1ebdf 48%, #f7f3ea 100%);
+    }
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 12px;
+      z-index: 100;
+      background: #203B38;
+      color: #F5F1E8;
+      padding: 8px 12px;
+      border-radius: 6px;
+      transition: top 0.2s ease;
+    }
+    .skip-link:focus { top: 12px; }
+    .hero-fade { animation: heroFade 1s ease-out both; }
+    .reveal-stagger > * {
+      opacity: 0;
+      transform: translateY(16px);
+      animation: cardIn 0.7s ease-out forwards;
+    }
+    .reveal-stagger > *:nth-child(1) { animation-delay: 0.12s; }
+    .reveal-stagger > *:nth-child(2) { animation-delay: 0.22s; }
+    .reveal-stagger > *:nth-child(3) { animation-delay: 0.32s; }
+    .section-line::after {
+      content: '';
+      display: block;
+      width: 76px;
+      height: 2px;
+      margin: 12px auto 0;
+      background-color: #B08A53;
+    }
+    .image-tint::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(190deg, rgba(15, 27, 27, 0.62), rgba(26, 43, 42, 0.26));
+    }
+    @keyframes heroFade {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes cardIn {
+      from { opacity: 0; transform: translateY(16px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .hero-fade,
+      .reveal-stagger > * {
+        animation: none !important;
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LodgingBusiness",
+      "name": "Johnson Family Estate",
+      "description": "A boutique-style private family estate focused on comfort, curated amenities, and warm host support.",
+      "url": "https://johnson-family-resort.jaxsnjohnson.com/",
+      "telephone": "+1-800-555-1234",
+      "email": "thejohnsons@email.com",
+      "amenityFeature": [
+        {"@type": "LocationFeatureSpecification", "name": "Private pool and hot tub", "value": true},
+        {"@type": "LocationFeatureSpecification", "name": "High-speed Wi-Fi", "value": true},
+        {"@type": "LocationFeatureSpecification", "name": "Entertainment lounge", "value": true},
+        {"@type": "LocationFeatureSpecification", "name": "Outdoor dining and grill", "value": true}
+      ]
+    }
+  </script>
 </head>
-<body class="bg-brand-cream text-brand-gray font-sans antialiased">
+<body class="font-sans text-estate-slate antialiased">
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
-    <!-- Header & Navigation -->
-    <header class="bg-brand-blue text-white sticky top-0 z-50 shadow-lg">
-        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-2xl font-serif text-brand-gold font-bold">The Johnson Family Estate</a>
-            <div class="hidden md:flex space-x-6">
-                <a href="#about" class="hover:text-brand-gold transition duration-300">Our Home</a>
-                <a href="#features" class="hover:text-brand-gold transition duration-300">Highlights</a>
-                <a href="#entertaining" class="hover:text-brand-gold transition duration-300">Entertaining</a>
-                <a href="#amenities" class="hover:text-brand-gold transition duration-300">Amenities</a>
-                <a href="#gallery" class="hover:text-brand-gold transition duration-300">Gallery</a>
-                <a href="#contact" class="bg-brand-gold text-brand-blue font-semibold px-4 py-2 rounded-md hover:bg-opacity-90 transition duration-300">Guest Info</a>
-            </div>
-            <button id="mobile-menu-button" class="md:hidden focus:outline-none">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
-            </button>
-        </nav>
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden">
-            <a href="#about" class="block py-2 px-4 text-sm hover:bg-brand-gray">Our Home</a>
-            <a href="#features" class="block py-2 px-4 text-sm hover:bg-brand-gray">Highlights</a>
-            <a href="#entertaining" class="block py-2 px-4 text-sm hover:bg-brand-gray">Entertaining</a>
-            <a href="#amenities" class="block py-2 px-4 text-sm hover:bg-brand-gray">Amenities</a>
-            <a href="#gallery" class="block py-2 px-4 text-sm hover:bg-brand-gray">Gallery</a>
-            <a href="#contact" class="block py-2 px-4 text-sm bg-brand-gold text-brand-blue font-semibold hover:bg-opacity-90">Guest Info</a>
+  <header class="sticky top-0 z-50 border-b border-estate-linen/70 bg-estate-ink text-estate-ivory shadow-soft" aria-label="Site header">
+    <nav class="mx-auto flex w-full max-w-7xl items-center justify-between px-6 py-4" aria-label="Primary navigation">
+      <a href="/" class="font-serif text-2xl tracking-wide text-estate-ivory">Johnson Family Estate</a>
+
+      <button id="mobile-menu-button" class="md:hidden rounded border border-estate-ivory/40 px-3 py-2 text-sm" aria-expanded="false" aria-controls="mobile-menu">
+        Menu
+      </button>
+
+      <div class="hidden items-center gap-6 text-sm md:flex">
+        <a href="/" class="font-semibold text-estate-brass" aria-current="page">Overview</a>
+        <a href="/accommodations/" class="hover:text-estate-brass">Accommodations</a>
+        <a href="/amenities/" class="hover:text-estate-brass">Amenities</a>
+        <a href="/gallery/" class="hover:text-estate-brass">Gallery</a>
+        <a href="/arrival-guide/" class="hover:text-estate-brass">Arrival & Stay Guide</a>
+        <a href="/local-area/" class="hover:text-estate-brass">Local Area</a>
+        <a href="/contact/" class="rounded bg-estate-brass px-4 py-2 font-semibold text-estate-ink hover:bg-[#c49b62]">Contact Host</a>
+      </div>
+    </nav>
+
+    <div id="mobile-menu" class="hidden border-t border-estate-ivory/20 md:hidden" aria-label="Mobile navigation">
+      <a href="/" class="block bg-estate-brass/20 px-6 py-3 font-semibold text-estate-brass" aria-current="page">Overview</a>
+      <a href="/accommodations/" class="block px-6 py-3 hover:bg-estate-pine">Accommodations</a>
+      <a href="/amenities/" class="block px-6 py-3 hover:bg-estate-pine">Amenities</a>
+      <a href="/gallery/" class="block px-6 py-3 hover:bg-estate-pine">Gallery</a>
+      <a href="/arrival-guide/" class="block px-6 py-3 hover:bg-estate-pine">Arrival & Stay Guide</a>
+      <a href="/local-area/" class="block px-6 py-3 hover:bg-estate-pine">Local Area</a>
+      <a href="/contact/" class="block bg-estate-brass px-6 py-3 font-semibold text-estate-ink">Contact Host</a>
+    </div>
+  </header>
+
+  <main id="main-content" aria-label="Main content">
+    <section class="relative min-h-[82vh] overflow-hidden">
+      <div class="image-tint absolute inset-0 bg-cover bg-center" style="background-image: url('/images/c86f5b28-3bcc-4a55-874f-7c1ff7d825c9-drone.JPG');"></div>
+      <div class="relative z-10 mx-auto flex min-h-[82vh] max-w-6xl items-center px-6 py-24">
+        <div class="hero-fade max-w-3xl text-estate-ivory">
+          <p class="mb-5 inline-block rounded-full border border-estate-ivory/40 bg-estate-ivory/10 px-4 py-1 text-sm uppercase tracking-[0.14em]">Boutique Private Estate Stay</p>
+          <h1 class="font-serif text-5xl leading-tight md:text-7xl">Refined comfort for family gatherings and memorable weekends.</h1>
+          <p class="mt-6 max-w-2xl text-lg text-estate-ivory/90 md:text-xl">Settle into spacious indoor and outdoor living, curated entertainment spaces, and host support designed to make every stay effortless.</p>
+          <div class="mt-8 flex flex-wrap gap-4">
+            <a href="mailto:thejohnsons@email.com?subject=Johnson%20Family%20Estate%20Stay%20Inquiry&body=Hello%20Johnson%20Family%2C%0A%0AI%E2%80%99d%20like%20to%20inquire%20about%20staying%20at%20the%20estate.%20Please%20share%20availability%20and%20next%20steps.%0A%0AThank%20you." class="rounded bg-estate-brass px-7 py-3 font-semibold text-estate-ink transition hover:bg-[#c49b62]">Plan Your Stay</a>
+            <a href="/arrival-guide/" class="rounded border border-estate-ivory/60 px-7 py-3 font-semibold text-estate-ivory hover:bg-estate-ivory/10">Guest Arrival Guide</a>
+          </div>
         </div>
-    </header>
+      </div>
+    </section>
 
-    <main>
-        <!-- Hero Section -->
-        <section class="relative h-screen bg-cover bg-center" style="background-image: url('/images/c86f5b28-3bcc-4a55-874f-7c1ff7d825c9-drone.JPG');">
-            <div class="absolute inset-0 bg-black bg-opacity-40"></div>
-            <div class="relative z-10 flex flex-col justify-center items-center h-full text-white text-center px-4">
-                <h1 class="text-5xl md:text-7xl font-serif hero-text-shadow mb-4">Welcome to Our Home</h1>
-                <p class="text-lg md:text-xl max-w-2xl hero-text-shadow">Make yourself comfortable and create lasting memories with us.</p>
-            </div>
-        </section>
+    <section class="border-y border-estate-linen/80 bg-estate-ivory/70">
+      <div class="mx-auto grid max-w-7xl grid-cols-2 gap-4 px-6 py-7 text-sm md:grid-cols-5 md:text-base">
+        <div><p class="font-semibold text-estate-ink">Sleeps</p><p>Up to 10 guests</p></div>
+        <div><p class="font-semibold text-estate-ink">Bedrooms</p><p>5 private rooms</p></div>
+        <div><p class="font-semibold text-estate-ink">Check-In</p><p>After 4:00 PM</p></div>
+        <div><p class="font-semibold text-estate-ink">Parking</p><p>On-site driveway</p></div>
+        <div><p class="font-semibold text-estate-ink">Wi-Fi</p><p>Complimentary throughout</p></div>
+      </div>
+    </section>
 
-        <!-- About Section -->
-        <section id="about" class="py-20 bg-white">
-            <div class="container mx-auto px-6 text-center">
-                <h2 class="text-4xl font-serif text-brand-blue section-title">Our Little Slice of Paradise</h2>
-                <p class="mt-4 max-w-3xl mx-auto text-lg leading-relaxed">
-                    Welcome! We are so excited to share our home with you. This place is more than just a house to us; it's a collection of memories, laughter, and love. We've designed every corner to be a space for relaxation and enjoyment, and we hope you feel that warmth during your stay. Please, treat it as your own.
-                </p>
-            </div>
-        </section>
+    <section class="mx-auto max-w-7xl px-6 py-20">
+      <h2 class="section-line text-center font-serif text-4xl text-estate-ink md:text-5xl">Why Guests Love Staying Here</h2>
+      <div class="reveal-stagger mt-12 grid gap-6 md:grid-cols-3">
+        <article class="rounded-xl border border-estate-linen bg-white p-7 shadow-soft">
+          <h3 class="font-serif text-2xl text-estate-ink">Thoughtful Comfort</h3>
+          <p class="mt-3">From flexible gathering spaces to quiet corners, every room is arranged for both connection and downtime.</p>
+        </article>
+        <article class="rounded-xl border border-estate-linen bg-white p-7 shadow-soft">
+          <h3 class="font-serif text-2xl text-estate-ink">Entertaining Built-In</h3>
+          <p class="mt-3">Pool, lounge, deck, and dining zones are ready for birthdays, game weekends, and family reunions.</p>
+        </article>
+        <article class="rounded-xl border border-estate-linen bg-white p-7 shadow-soft">
+          <h3 class="font-serif text-2xl text-estate-ink">Reliable Host Support</h3>
+          <p class="mt-3">Typical host response time is under 30 minutes during active stays, with clear guidance from arrival to check-out.</p>
+        </article>
+      </div>
+    </section>
 
-        <!-- Home Features Section -->
-        <section id="features" class="py-20 bg-brand-cream">
-            <div class="container mx-auto px-6">
-                <h2 class="text-4xl font-serif text-brand-blue text-center section-title">Our Home's Highlights</h2>
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
-                    <!-- Feature 1 -->
-                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                        <img src="/images/e356f541-0091-49a7-ac5d-fbf3e9f13821-pool.jpeg" alt="Pool and Hot Tub" class="w-full h-64 object-cover">
-                        <div class="p-6">
-                            <h3 class="text-2xl font-serif text-brand-blue">Pool & Hot Tub</h3>
-                            <p class="mt-2 text-brand-gray">Whether you're looking to swim laps or simply relax your muscles, the pool and adjoining hot tub are your private oasis.</p>
-                        </div>
-                    </div>
-                    <!-- Feature 2 -->
-                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                        <img src="/images/0411ac33-13dc-413d-9f11-a69defdce830-porch.jpeg" alt="The Daybreak Deck" class="w-full h-64 object-cover">
-                        <div class="p-6">
-                            <h3 class="text-2xl font-serif text-brand-blue">The Daybreak Deck</h3>
-                            <p class="mt-2 text-brand-gray">There's no better way to start the day. Grab a cup of coffee and watch the world wake up from this peaceful, east-facing vantage point.</p>
-                        </div>
-                    </div>
-                    <!-- Feature 3 -->
-                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                        <img src="/images/7d7bc258-1ff5-42b7-9001-a28318bf4ac5-garden.jpeg" alt="Lush Garden" class="w-full h-64 object-cover">
-                        <div class="p-6">
-                            <h3 class="text-2xl font-serif text-brand-blue">The Garden</h3>
-                            <p class="mt-2 text-brand-gray">Take a quiet stroll through our garden. It's our little passion project, filled with seasonal blooms and tranquil spots to sit and reflect.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Entertaining Section -->
-        <section id="entertaining" class="py-20 bg-white">
-            <div class="container mx-auto px-6">
-                <h2 class="text-4xl font-serif text-brand-blue text-center section-title">Spaces to Entertain</h2>
-                <div class="mt-12 md:flex md:items-center md:space-x-12">
-                    <div class="md:w-1/2">
-                        <img src="/images/77525782-d931-4265-85cb-7270fcdaa336-The-Stable-Saloon.jpeg" class="rounded-lg shadow-lg" alt="The Stable Saloon Bar">
-                    </div>
-                    <div class="md:w-1/2 mt-8 md:mt-0">
-                        <h3 class="text-3xl font-serif text-brand-blue mb-4">The Stable Saloon</h3>
-                        <p class="text-lg leading-relaxed mb-4">
-                            Welcome to The Stable Saloon. Aptly named, as it shares its home with two classic Mustangs. The garage has been transformed into the ultimate hangout spot, complete with multiple TVs for game day and a full bar. It's the perfect place to unwind.
-                        </p>
-                        <h4 class="text-xl font-semibold text-brand-blue">Other Spaces:</h4>
-                        <ul class="list-disc list-inside mt-2 space-y-1 text-brand-gray">
-                            <li>Fully-Equipped Chef's Kitchen</li>
-                            <li>Formal Dining Area for Gatherings</li>
-                            <li>Outdoor Patio with BBQ Grill</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Amenities Section -->
-        <section id="amenities" class="py-20 bg-brand-cream">
-            <div class="container mx-auto px-6">
-                <h2 class="text-4xl font-serif text-brand-blue text-center section-title">Amenities & Comforts</h2>
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12 text-center">
-                    <div class="bg-white p-6 rounded-lg shadow-lg">
-                        <h3 class="text-xl font-serif text-brand-blue">Fitness Corner</h3>
-                        <p class="mt-2">For those who like to stay active, we have a treadmill available for your use.</p>
-                    </div>
-                    <div class="bg-white p-6 rounded-lg shadow-lg">
-                        <h3 class="text-xl font-serif text-brand-blue">Wi-Fi Access</h3>
-                        <p class="mt-2">Enjoy complimentary Wi-Fi access throughout the house to stay connected during your visit.</p>
-                    </div>
-                    <div class="bg-white p-6 rounded-lg shadow-lg">
-                        <h3 class="text-xl font-serif text-brand-blue">Entertainment System</h3>
-                        <p class="mt-2">Enjoy movie nights with our large-screen TV and surround sound system.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Gallery Section -->
-        <section id="gallery" class="py-20 bg-white">
-            <div class="container mx-auto px-6">
-                <h2 class="text-4xl font-serif text-brand-blue text-center section-title">Moments of Splendor</h2>
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12">
-                    <div class="relative rounded-lg overflow-hidden group gallery-item">
-                        <img src="https://placehold.co/500x500/0A2342/FFFFFF?text=Poolside" alt="Gallery Image 1" class="w-full h-full object-cover">
-                        <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 gallery-overlay flex items-center justify-center">
-                           <p class="text-white text-lg">Poolside Relaxation</p>
-                        </div>
-                    </div>
-                    <div class="relative rounded-lg overflow-hidden group gallery-item col-span-2">
-                        <img src="https://placehold.co/1000x500/C1A57B/FFFFFF?text=Resort+Exterior" alt="Gallery Image 2" class="w-full h-full object-cover">
-                         <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 gallery-overlay flex items-center justify-center">
-                           <p class="text-white text-lg">Our Grand Entrance</p>
-                        </div>
-                    </div>
-                    <div class="relative rounded-lg overflow-hidden group gallery-item">
-                        <img src="https://placehold.co/500x500/4A4A4A/FFFFFF?text=Lobby" alt="Gallery Image 3" class="w-full h-full object-cover">
-                         <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 gallery-overlay flex items-center justify-center">
-                           <p class="text-white text-lg">Elegant Interiors</p>
-                        </div>
-                    </div>
-                    <div class="relative rounded-lg overflow-hidden group gallery-item">
-                         <img src="https://placehold.co/500x500/F3EFEA/0A2342?text=Beach+View" alt="Gallery Image 4" class="w-full h-full object-cover">
-                         <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 gallery-overlay flex items-center justify-center">
-                           <p class="text-white text-lg">Pristine Beaches</p>
-                        </div>
-                    </div>
-                    <div class="relative rounded-lg overflow-hidden group gallery-item">
-                        <img src="https://placehold.co/500x500/C1A57B/FFFFFF?text=Spa" alt="Gallery Image 5" class="w-full h-full object-cover">
-                         <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 gallery-overlay flex items-center justify-center">
-                           <p class="text-white text-lg">The Serenity Spa</p>
-                        </div>
-                    </div>
-                     <div class="relative rounded-lg overflow-hidden group gallery-item col-span-2">
-                        <img src="https://placehold.co/1000x500/0A2342/FFFFFF?text=Dining+Experience" alt="Gallery Image 6" class="w-full h-full object-cover">
-                         <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 gallery-overlay flex items-center justify-center">
-                           <p class="text-white text-lg">Unforgettable Cuisine</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Guest Information / FAQ Section -->
-        <section id="guest-info" class="py-20 bg-brand-cream">
-            <div class="container mx-auto px-6">
-                <h2 class="text-4xl font-serif text-brand-blue text-center section-title">Information For Your Stay</h2>
-                <div class="max-w-3xl mx-auto mt-12 space-y-4">
-                    <div class="bg-white p-4 rounded-lg shadow">
-                        <h3 class="font-semibold text-brand-blue">Wi-Fi Network & Password</h3>
-                        <p class="mt-1 text-brand-gray">Network: <strong>JohnsonFamilyGuest</strong> | Password: <strong>Memories2025</strong></p>
-                    </div>
-                    <div class="bg-white p-4 rounded-lg shadow">
-                        <h3 class="font-semibold text-brand-blue">House Quirks & Tips</h3>
-                        <p class="mt-1 text-brand-gray">The back door can be a little sticky, just give it a good push! The Wi-Fi is great for checking emails, but might be a bit slow for streaming. The remote for the living room TV is the one with the blue sticker.</p>
-                    </div>
-                     <div class="bg-white p-4 rounded-lg shadow">
-                        <h3 class="font-semibold text-brand-blue">Our Favorite Local Spots</h3>
-                        <p class="mt-1 text-brand-gray">Be sure to check out "The Corner Cafe" for breakfast and "Main Street Pizza" for a great casual dinner. Let us know if you need more recommendations!</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact & Booking -->
-        <section id="contact" class="py-20 bg-brand-blue text-white">
-            <div class="container mx-auto px-6 text-center">
-                <h2 class="text-4xl font-serif section-title">Enjoy Your Stay!</h2>
-                <p class="mt-4 max-w-2xl mx-auto text-lg leading-relaxed text-brand-cream">
-                    We're so happy to have you. If you need anything at all during your visit, please don't hesitate to reach out to us directly.
-                </p>
-                <div class="mt-8">
-                    <a href="mailto:thejohnsons@email.com" class="bg-brand-gold text-brand-blue font-semibold text-lg px-8 py-4 rounded-md hover:bg-opacity-90 transition duration-300 inline-block">Contact Us</a>
-                </div>
-                <p class="mt-6 text-brand-cream">Call or Text us at 1-800-555-1234</p>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-8">
-        <div class="container mx-auto px-6 text-center">
-            <p>&copy; 2025 The Johnson Family Home. Make Yourselves at Home.</p>
-            <div class="flex justify-center space-x-4 mt-4">
-                <a href="#" class="hover:text-brand-gold">Facebook</a>
-                <a href="#" class="hover:text-brand-gold">Instagram</a>
-                <a href="#" class="hover:text-brand-gold">Twitter</a>
-            </div>
+    <section class="mx-auto max-w-7xl px-6 pb-20">
+      <div class="rounded-2xl border border-estate-brass/30 bg-estate-ivory p-8 shadow-soft">
+        <h2 class="font-serif text-3xl text-estate-ink">Explore More of the Estate</h2>
+        <p class="mt-3 max-w-2xl">Browse each section as its own dedicated site page for a faster planning flow.</p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <a href="/accommodations/" class="rounded bg-estate-ink px-5 py-2 font-semibold text-estate-ivory hover:bg-estate-pine">See Accommodations</a>
+          <a href="/gallery/" class="rounded border border-estate-slate/40 px-5 py-2 font-semibold hover:bg-white">View Gallery</a>
+          <a href="/arrival-guide/" class="rounded border border-estate-slate/40 px-5 py-2 font-semibold hover:bg-white">Read Arrival Guide</a>
         </div>
-    </footer>
+      </div>
+    </section>
+  </main>
 
-    <script>
-        // Mobile menu toggle
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
+  <footer class="border-t border-estate-linen bg-[#f0e9dd] py-8" aria-label="Site footer">
+    <div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-6 text-sm text-estate-slate md:flex-row">
+      <p>&copy; 2026 Johnson Family Estate. Boutique private stay experience.</p>
+      <div class="flex items-center gap-4">
+        <a href="https://instagram.com" class="hover:text-estate-ink">Instagram</a>
+        <a href="https://facebook.com" class="hover:text-estate-ink">Facebook</a>
+        <a href="/arrival-guide/" class="hover:text-estate-ink">Guest FAQ</a>
+      </div>
+    </div>
+  </footer>
 
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
+  <script>
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    if (mobileMenuButton && mobileMenu) {
+      const mobileLinks = mobileMenu.querySelectorAll('a');
+
+      mobileMenuButton.addEventListener('click', () => {
+        const expanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
+        mobileMenuButton.setAttribute('aria-expanded', String(!expanded));
+        mobileMenu.classList.toggle('hidden');
+      });
+
+      mobileLinks.forEach((link) => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.add('hidden');
+          mobileMenuButton.setAttribute('aria-expanded', 'false');
         });
-    </script>
-
+      });
+    }
+  </script>
 </body>
 </html>
